@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Safe HTML</title>
+    <script src="packages/web_components/platform.js"></script>
+    <style>
+      #container {
+        border: solid 1px blue;
+        padding: 15px;
+      }
+
+      table, tr, td {
+        border-collapse: collapse;
+        border: solid 1px grey;
+      }
+
+      td {
+        width: 50px;
+        text-align: right;
+      }
+
+      body {
+        font: 71%/1.5 Verdana, Sans-Serif;
+        background: #eee;
+      }
+
+      keyboard {
+        margin: 100px auto;
+      }
+
+      #write {
+        margin: 0 0 5px;
+        padding: 5px;
+        width: 671px;
+        height: 200px;
+        font: 1em/1.5 Verdana, Sans-Serif;
+        background: #fff;
+        border: 1px solid #f9f9f9;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body ng-cloak >
+
+    <div id="container" my-ctrl bwu-safe-html="ctrl.html"></div>
+
+    <script type="application/dart" src="bwu_safe_html.dart"></script>
+    <script type="text/javascript" src="packages/browser/dart.js"></script>
+  </body>
+</html>

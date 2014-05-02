@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Onscreen Keyboard</title>
+    <!--<script src="packages/web_components/platform.js"></script>-->
+
+    <style>
+      body {
+        font: 71%/1.5 Verdana, Sans-Serif;
+        background: #eee;
+      }
+
+      keyboard {
+        margin: 100px auto;
+      }
+
+      #write {
+        margin: 0 0 5px;
+        padding: 5px;
+        width: 671px;
+        height: 200px;
+        font: 1em/1.5 Verdana, Sans-Serif;
+        background: #fff;
+        border: 1px solid #f9f9f9;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body ng-cloak ng-controller="text-ctrl">
+    <bwu-onscreen-keyboard value="ctrl.text">
+      <textarea id="write" rows="6" cols="60" ng-model="ctrl.text"></textarea>
+    </bwu-onscreen-keyboard>
+
+    <script type="application/dart" src="bwu_onscreen_keyboard.dart"></script>
+    <script type="text/javascript" src="packages/browser/dart.js"></script>
+  </body>
+</html>

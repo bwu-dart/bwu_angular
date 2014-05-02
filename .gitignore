@@ -1,0 +1,28 @@
+########################################
+# Git ignore file for Dart executables #
+########################################
+
+# Global
+###################
+*.exe
+*.*~
+
+# Dart global
+###################
+.buildlog
+*.dart.js
+*.dart.js.deps
+*.dart.js.map
+#pubspec.lock
+.buildlog
+
+# Dart project
+###################
+packages/
+packages
+lib/docs/
+build/
+out/
+deploy/
+.settings/
+_from_packages
