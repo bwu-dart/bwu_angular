@@ -1,7 +1,7 @@
 name: bwu_angular
 version: 0.0.1
 author: Günter Zöchbauer
-description: Some tools, decorators, or components I found useful for building AngularDart applications.
+description: Tools, decorators, or components we found useful for building AngularDart applications.
 environment:
   sdk: '>=1.3.0 <2.0.0'
 dependencies:

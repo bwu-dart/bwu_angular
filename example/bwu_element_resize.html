@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app>
+  <head>
+    <meta charset="utf-8">
+    <title>Focus</title>
+
+    <script src="packages/web_components/platform.js"></script>
+    <link rel="stylesheet" href="packages/bwu_angular/bwu_element_resize/bwu_element_resize.css">
+    <style>
+      #my-element {
+        height: 200px;
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+  <body ng-cloak>
+    <div>
+      <div id="my-element"  style="border: 1px solid blue;">
+        <div id='my-sizable' bwu-element-resize></div>
+      </div>
+    </div>
+
+    <script type="application/dart" src="bwu_element_resize.dart"></script>
+    <script type="text/javascript" src="packages/browser/dart.js"></script>
+
+  </body>
+</html>

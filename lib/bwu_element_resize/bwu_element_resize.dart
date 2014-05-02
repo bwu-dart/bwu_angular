@@ -1,20 +1,21 @@
-library angular_observe_resize.main;
+library bwu_angular.bwu_element_resize;
 
 import 'dart:async' as async;
 import 'dart:html' as dom;
 import 'package:angular/angular.dart' as ng;
-import 'package:angular/application_factory.dart' as ngaf;
 
 // see http://stackoverflow.com/questions/19329530
 // and this bug https://code.google.com/p/dart/issues/detail?id=18062
 // source from http://www.backalleycoder.com/2013/03/18/cross-browser-event-based-element-resize-detection/
 
-@ng.Decorator(selector: '[ng-observe-size]')
-class NgObserveSizeDirective implements ng.AttachAware, ng.DetachAware {
+@ng.Decorator(selector: '[bwu-element-resize]')
+class BwuElementResize implements ng.AttachAware, ng.DetachAware {
   dom.Element _element;
   bool _hasAttacheEvent;
 
-  NgObserveSizeDirective(this._element);
+  BwuElementResize(this._element) {
+    print("BwuElementResize");
+  }
 
   void onSizeChange(dom.Event e) {
     _element.parent.scrollTop = _element.scrollHeight;
@@ -43,7 +44,6 @@ class NgObserveSizeDirective implements ng.AttachAware, ng.DetachAware {
   }
 
   int _resizeRaf;
-
 
   void scrollListener(dom.Event e) {
     resetTriggers();
@@ -83,20 +83,4 @@ class NgObserveSizeDirective implements ng.AttachAware, ng.DetachAware {
   void detach() {
     _triggers.remove();
   }
-}
-
-class MyAppModule extends ng.Module {
-  MyAppModule() {
-    type(NgObserveSizeDirective);
-  }
-}
-
-main() {
-  print('main');
-  ngaf.applicationFactory().addModule(new MyAppModule()).run();
-
-  new async.Timer.periodic(new Duration(seconds: 1), (t) {
-    var elt = (dom.querySelector('#my_sizable') as dom.HtmlElement);
-    elt.append(new dom.Element.html('<div>${new DateTime.now()}</div>'));
-  });
 }
